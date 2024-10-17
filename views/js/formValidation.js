@@ -8,6 +8,15 @@ $(document).ready(function() {
                 required: true,
                 minlength: 8
             }
+        },
+        messages:{
+            username:{
+                required: "Username is required"
+            },
+            password:{
+                required: "Password is required",
+                minlength: "Password must be at least 8 characters long"
+            }
         }
     });
 
@@ -19,6 +28,15 @@ $(document).ready(function() {
             password:{
                 required: true,
                 minlength: 8
+            }
+        },
+        messages:{
+            username:{
+                required: "Username is required"
+            },
+            password:{
+                required: "Password is required",
+                minlength: "Password must be at least 8 characters long"
             }
         }
     });

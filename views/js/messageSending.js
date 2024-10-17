@@ -1,30 +1,33 @@
 $(document).ready(function() {
     var conn = new WebSocket('ws://localhost:8080');
 
-    conn.onopen = function(e) {
-        console.log("Connection established!");
-    };
-
     conn.onmessage = function(e) {
         console.log(e.data);
         var data = JSON.parse(e.data);
-        var container='<div class="chat_message"><span class="username">'+data['username']+':'+'</span><span class="message">'+data['message']+'</span></div>';
-        $('#chat_messages').append(container);
+        if(data['counter']){
+            var activeUsers=$('#active-users');
+            activeUsers.text("Active users: "+data['counter']);
+        }else{
+            var container='<div class="chat-message d-flex flex-column justify-content-start align-items-start px-2 py-1"><div class="username">'+data['username']+'</div><div class="message">'+data['message']+'</div><div class="time mt-1 align-self-end">'+data['time']+'</div></div></div>';
+            $('#chat-messages').append(container);
+        }
     };
 
     $('#send').click(function() {
-        var message = $('#user_message').val();
+        var message = $('#user-message').val();
         var username = $('#username').val();
-        var data={
-            username:username,
-            message:message
+        if(message!=""){
+            var data={
+                username:username,
+                message:message
+            }
+            conn.send(JSON.stringify(data));
         }
-        conn.send(JSON.stringify(data));
     });
 
-    $('#message_form').submit(function(e) {
+    $('#message-form').submit(function(e) {
         e.preventDefault();
-        $('#user_message').val("");
+        $('#user-message').val("");
     });
 
 });

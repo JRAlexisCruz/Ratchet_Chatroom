@@ -23,15 +23,24 @@ class UserController{
         $found=false;
         $user = new User();
         if($user->buscar($data['username'])){
-            if(!$user->getPassword()==$data['password']){
-                $this->mensaje="Wrong password";
-            }else{
-                $found=true;
-            }
+            $found=true;
         }else{
             $this->mensaje="User is not registered";
         }
         return $found;
+    }
+
+    public function verifyPassword($data){
+        $verified=false;
+        $user = new User();
+        if($user->buscar($data['username'])){
+            if($user->getPassword()==$data['password']){
+                $verified=true;
+            }else{
+                $this->mensaje="Incorrect password";
+            }
+        }
+        return $verified;
     }
 
     public function insert($data){
