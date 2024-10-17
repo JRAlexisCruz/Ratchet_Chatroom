@@ -1,0 +1,51 @@
+body{
+    height: 100vh;
+}
+
+main{
+    width: 40%;
+    gap: 10px;
+    height: calc(100vh - 25px - 65px);
+    overflow: hidden;
+}
+
+.submitButton{
+    flex: 0 0 auto;
+    width: 100px;
+}
+
+.error{
+    color: red;
+}
+
+textarea{
+    resize: none;
+}
+
+.chat-message{
+    border: 1px solid black;
+}
+
+.message{
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+#chat-messages{
+    gap: 5px;
+    overflow: auto;
+}
+
+#message-form{
+    position: fixed;
+    bottom: 25px;
+    width: 40%;
+}
+
+h2{
+    font-size: 15px;
+}
+
+.username{
+    font-weight: bold;
+}
