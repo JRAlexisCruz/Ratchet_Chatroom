@@ -23,7 +23,9 @@ textarea{
 }
 
 .chat-message{
-    border: 1px solid black;
+    background-color: lightgray;
+    border: 1px solid lightgray;
+    border-radius: 10px;
 }
 
 .message{
@@ -56,8 +58,14 @@ h2{
     position: fixed;
     right: 5%;
     top: 10%;
+    background-color: lightgray;
+    border-radius: 20px;
+}
+
+#active-users table thead tr th{
+    font-size: 20px;
 }
 
 #active-users table tbody tr td{
-    font-size: 15px;
+    font-size: 20px;
 }
