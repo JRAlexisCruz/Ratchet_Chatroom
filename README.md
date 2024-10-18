@@ -1,4 +1,5 @@
-# Trabajo de Investigacion - Ratchet_Chatroom
+# Trabajo de Investigacion
+- Chatroom con libreria Ratchet
 # Integrantes
 - Antueno Pablo Sebastian / FAI-4973
 - Cruz Jesus Ramon Alexis / FAI-4682
