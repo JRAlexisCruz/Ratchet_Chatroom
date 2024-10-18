@@ -1,6 +1,10 @@
 <?php
     session_start();
-    $username=$_SESSION['username'];
+    if(isset($_SESSION['username'])){
+        $username=$_SESSION['username'];
+    }else{
+        header('Location: ../home/index.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -15,9 +19,20 @@
 <body class="d-flex flex-column align-items-center">
     <main class="d-flex flex-column">
         <h1 class="align-self-center">Welcome <?=$username?></h1>
-        <h2 id="active-users" class="align-self-start"></h2>
         <div id="chat-messages" class="d-flex flex-column">
             
+        </div>
+        <div id="active-users" class="d-flex flex-column">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="text-center">Active Users</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
         </div>
         <form action="" method="post" id="message-form">
             <div class="input-group">

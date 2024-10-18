@@ -43,9 +43,21 @@ textarea{
 }
 
 h2{
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .username{
     font-weight: bold;
+}
+
+#active-users{
+    height: 75vh;
+    width: 20vw;
+    position: fixed;
+    right: 5%;
+    top: 10%;
+}
+
+#active-users table tbody tr td{
+    font-size: 15px;
 }

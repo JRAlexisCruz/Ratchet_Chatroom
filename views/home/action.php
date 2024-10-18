@@ -1,7 +1,6 @@
 <?php
 
 include_once '../../utils/configuracion.php';
-
 $data=data_submitted();
 $userController=new UserController();
 session_start();
